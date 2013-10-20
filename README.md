@@ -29,6 +29,8 @@ ARMLinux
 
 ###Busybox
 
+* init utilities -> init
+* shells -> ash (associated with "sh")
 
 ##How To
 
