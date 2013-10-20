@@ -52,6 +52,11 @@ ARMLinux
 * get latest stable busybox version (used 1.21.1)
 * extract busybox
   * command "tar xfvj [ARCHIV].tar.bz2" for .tar.bz2 busybox
+* configure makefile for ccache 
+  * CC = ccache $(CROSS_COMPILE)gcc
+  * HOSTCC = ccache gcc
+* compile busybox
+ * command "make CROSS_COMPILE=arm-linux-gnueabi-"
 
 ##Questions
 
