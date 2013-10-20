@@ -26,7 +26,7 @@ ARMLinux
   * CC = ccache $(CROSS_COMPILE)gcc
   * HOSTCC = ccache gcc
 * compile kernel
-  * command "ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make [IMAGE]"
+  * command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-"
   * use -jN for multithreaded compile
   * "CROSS_COMPILE=arm-linus-gnueabi-" because cross-compiler is "arm-linux-gnueabi-gcc" -> look at CC in makefile
 
