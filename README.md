@@ -61,6 +61,11 @@ ARMLinux
 * compile busybox
  * command "make CROSS_COMPILE=arm-linux-gnueabi- build"
 
+###Create rootFS with busybox
+
+* use command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- install"
+ * in menuconfig BusyBox Settings –> Build Options -> Installation  Options (make install behavior) points to output dir of rootFS 
+
 ##Questions
 
 enabled device drivers after default config for arm:
