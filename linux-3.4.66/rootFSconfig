@@ -1,1 +1,1 @@
-file /init application/bin/helloworld
+file /init application/bin/helloworld 755 0 0
