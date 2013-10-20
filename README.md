@@ -87,3 +87,4 @@ enabled device drivers after default config for arm:
 * I2C: http://de.wikipedia.org/wiki/I%C2%B2C
 * IOMMU: http://de.wikipedia.org/wiki/IOMMU
 * HID: http://de.wikipedia.org/wiki/Human_Interface_Device
+* Busybox rootFS: http://emreboy.wordpress.com/2012/12/20/building-a-root-file-system-using-busybox/
