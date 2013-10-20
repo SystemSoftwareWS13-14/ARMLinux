@@ -27,8 +27,6 @@ ARMLinux
  * MMC/SD/SDIO card support
  * IOMMU Hardware support
 
-* 
-
 ###Busybox
 
 
@@ -62,11 +60,15 @@ enabled device drivers after default config for arm:
 * Ethernet, WLAN
 * soundcard support
 * I2C
-* HID devices
+* HID
 * USB
 * SD card
 * IOMMU
 
 ##Useful Links
 
-* http://gumstix.org/basic-cross-compilation.html
+* cross-compile-toolchain: http://gumstix.org/basic-cross-compilation.html
+* MTD: http://de.wikipedia.org/wiki/Memory_Technology_Device
+* I2C: http://de.wikipedia.org/wiki/I%C2%B2C
+* IOMMU: http://de.wikipedia.org/wiki/IOMMU
+* HID: http://de.wikipedia.org/wiki/Human_Interface_Device
