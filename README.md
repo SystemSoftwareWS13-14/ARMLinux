@@ -10,7 +10,24 @@ ARMLinux
 
 ###Kernel
 
-* General Setup -> initramfs
+* used "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- defconfig"
+
+* Device Drivers
+ * Generic Driver options -> Select only drivers that don't need  compile-time external firmwarwe 
+ * prevent firmware from being built
+ * include in-kernel firmware blobs in kernel binary
+ * Memory Technology Device support
+ * Block devices -> RAM block device support
+ * Network device support -> Ethernet driver support
+ * Network device support -> Wireless LAN
+ * I2C support
+ * soundcard support
+ * HID devices
+ * USB support
+ * MMC/SD/SDIO card support
+ * IOMMU Hardware support
+
+* 
 
 ###Busybox
 
@@ -35,6 +52,20 @@ ARMLinux
 * get latest stable busybox version (used 1.21.1)
 * extract busybox
   * command "tar xfvj [ARCHIV].tar.bz2" for .tar.bz2 busybox
+
+##Questions
+
+enabled device drivers after default config for arm:
+
+* MTD 
+* RAM block device
+* Ethernet, WLAN
+* soundcard support
+* I2C
+* HID devices
+* USB
+* SD card
+* IOMMU
 
 ##Useful Links
 
