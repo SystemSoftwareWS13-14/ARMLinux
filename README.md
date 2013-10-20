@@ -10,6 +10,8 @@ ARMLinux
 
 ###Kernel
 
+* initramfs source file points to "rootFSconfig"
+
 * used "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- defconfig"
 
 * Device Drivers
