@@ -56,7 +56,7 @@ ARMLinux
   * CC = ccache $(CROSS_COMPILE)gcc
   * HOSTCC = ccache gcc
 * compile busybox
- * command "make CROSS_COMPILE=arm-linux-gnueabi-"
+ * command "make CROSS_COMPILE=arm-linux-gnueabi- build"
 
 ##Questions
 
