@@ -31,6 +31,9 @@ ARMLinux
 
 * init utilities -> init
 * shells -> ash (associated with "sh")
+* coreutils -> ls, echo
+* editors -> vi
+* Linux System Utilities -> mount, umount, mdev
 
 ##How To
 
