@@ -10,11 +10,9 @@ ARMLinux
 
 ###Kernel
 
-###Busybox
+* General Setup -> initramfs
 
-* get latest stable busybox version (used 1.21.1)
-* extract busybox
-  * command "tar xfvj [ARCHIV].tar.bz2" for .tar.bz2 busybox
+###Busybox
 
 
 ##How To
@@ -34,6 +32,9 @@ ARMLinux
 
 ###Compile Busybox
 
+* get latest stable busybox version (used 1.21.1)
+* extract busybox
+  * command "tar xfvj [ARCHIV].tar.bz2" for .tar.bz2 busybox
 
 ##Useful Links
 
