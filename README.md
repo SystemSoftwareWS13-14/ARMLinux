@@ -11,6 +11,7 @@ ARMLinux
 ###Kernel
 
 * initramfs source file points to "rootFSconfig"
+* enable loadable module support unchecked
 
 * used "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- vexpress_defconfig"
 
@@ -68,6 +69,11 @@ ARMLinux
 
 * use command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- install"
  * in menuconfig BusyBox Settings –> Build Options -> Installation  Options (make install behavior) points to output dir of rootFS 
+
+###Run Emulation
+* use "arm-system-qemu" for arm systems
+* use "-M vexpress-a9" to specify Verstaile Express Board with A9 Core
+* use "-serial stdio" to specify stdin/out as input/output devices
 
 ##Questions
 
