@@ -1,3 +1,10 @@
 dir /dev 777 0 0
+dir /bin 777 0 0
 nod /dev/console 777 0 0 c 5 1
-file /init application/bin/helloworld 755 0 0
+nod /dev/mem 777 0 0 c 1 1
+nod /dev/kmem 777 0 0 c 1 2
+nod /dev/null 777 0 0 c 1 3
+nod /dev/zero 777 0 0 c 1 5
+nod /dev/ptyp0 777 0 0 c 2 1
+nod /dev/ttyp0 777 0 0 c 3 1
+file /init application/bin/helloworld 777 0 0
