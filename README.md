@@ -61,7 +61,7 @@ ARMLinux
   * CC = ccache $(CROSS_COMPILE)gcc
   * HOSTCC = ccache gcc
 * compile busybox
- * command "make CROSS_COMPILE=arm-linux-gnueabi- build"
+ * command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- busybox"
 
 ###Create rootFS with busybox
 
