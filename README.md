@@ -12,21 +12,22 @@ ARMLinux
 
 * initramfs source file points to "rootFSconfig"
 
-* used "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- defconfig"
+* used "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- vexpress_defconfig"
 
 * Device Drivers
  * Generic Driver options -> Select only drivers that don't need  compile-time external firmwarwe 
- * prevent firmware from being built
- * include in-kernel firmware blobs in kernel binary
+ * -> prevent firmware from being built
+ * -> include in-kernel firmware blobs in kernel binary
  * Memory Technology Device support
- * Block devices -> RAM block device support
+ * Block devices
+ * SCSI device support -> SCSI disk support
+ * Serial ATA and ...
  * Network device support -> Ethernet driver support
- * Network device support -> Wireless LAN
- * I2C support
  * soundcard support
  * HID devices
  * USB support
  * MMC/SD/SDIO card support
+ * Realtime Clock
  * IOMMU Hardware support
 
 ###Busybox
@@ -61,7 +62,7 @@ ARMLinux
   * CC = ccache $(CROSS_COMPILE)gcc
   * HOSTCC = ccache gcc
 * compile busybox
- * command "make CROSS_COMPILE=arm-linux-gnueabi- build"
+ * command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- busybox"
 
 ###Create rootFS with busybox
 
@@ -73,13 +74,14 @@ ARMLinux
 enabled device drivers after default config for arm:
 
 * MTD 
-* RAM block device
-* Ethernet, WLAN
+* SATA
+* Ethernet
 * soundcard support
-* I2C
 * HID
 * USB
+* SCSI Disk
 * SD card
+* Realtime Clock
 * IOMMU
 
 ##Useful Links
