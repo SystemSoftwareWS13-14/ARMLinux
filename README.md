@@ -52,7 +52,7 @@ ARMLinux
 * compile kernel
   * command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-"
   * use -jN for multithreaded compile
-  * "CROSS_COMPILE=arm-linus-gnueabi-" because cross-compiler is "arm-linux-gnueabi-gcc" -> look at CC in makefile
+  * "CROSS_COMPILE=arm-linux-gnueabi-" because cross-compiler is "arm-linux-gnueabi-gcc" -> look at CC in makefile
 
 ###Compile Busybox
 
