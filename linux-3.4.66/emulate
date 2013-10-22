@@ -1,5 +1,5 @@
 #!/bin/bash
 
-IMGPATH="arch/arm/boot/bzImage"
+IMGPATH="arch/arm/boot/zImage"
 
-qemu-system-arm -kernel $IMGPATH -curses -monitor telnet:127.0.0.1:7777,server
+qemu-system-arm -kernel $IMGPATH -curses -monitor telnet:127.0.0.1:7777,server -m 300
