@@ -105,6 +105,10 @@ First UART serial port
 * /dev/pty  
 Pseudo terminal master side.
 
+How to see the boot messages from the kernel:
+The kernel has the device /dev/console. This points to the serial terminal by default.
+So qemu needs to redirect the serial output to its own tty.
+
 Sources:  
 http://unix.stackexchange.com/questions/60641/linux-difference-between-dev-console-dev-tty-and-dev-tty0
 https://www.kernel.org/doc/Documentation/devices.txt
