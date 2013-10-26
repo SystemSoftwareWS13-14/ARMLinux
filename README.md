@@ -90,6 +90,25 @@ enabled device drivers after default config for arm:
 * Realtime Clock
 * IOMMU
 
+Explanation of serial and virtual consoles:
+* /dev/console:  
+Set of devices that can be set with console= parameter at boot time.
+Can be redirected to virt. console or serial devices, default is /dev/tty0.
+* /dev/tty0  
+Current virtual console.
+* /dev/tty[1-x]  
+One of the virtual consoles.
+* /dev/tty  
+The console used by the process querying it.
+* /dev/ttyS0  
+First UART serial port
+* /dev/pty  
+Pseudo terminal master side.
+
+Sources:  
+http://unix.stackexchange.com/questions/60641/linux-difference-between-dev-console-dev-tty-and-dev-tty0
+https://www.kernel.org/doc/Documentation/devices.txt
+
 ##Useful Links
 
 * cross-compile-toolchain: http://gumstix.org/basic-cross-compilation.html
