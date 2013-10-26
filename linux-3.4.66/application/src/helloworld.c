@@ -39,7 +39,7 @@ int printSysInfo()
         printf("Uptime: %lu\n", l_sysinfo.uptime);
         printf("Total RAM: %lu MB\n", l_sysinfo.totalram / MB);
         printf("Free RAM: %lu MB\n", l_sysinfo.freeram / MB);
-        printf("Process Count:%hi\n", l_sysinfo.procs);
+        printf("Process Count: %hi\n", l_sysinfo.procs);
         printf("Page size: %d\n", l_sysinfo.mem_unit);
         return 0;
 }

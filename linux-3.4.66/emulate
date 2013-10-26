@@ -1,5 +1,0 @@
-#!/bin/bash
-
-IMGPATH="arch/arm/boot/zImage"
-
-qemu-system-arm -kernel $IMGPATH -curses -monitor telnet:127.0.0.1:7777,server -M vexpress-a9 -serial stdio
