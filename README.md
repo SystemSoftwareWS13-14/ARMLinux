@@ -90,6 +90,36 @@ enabled device drivers after default config for arm:
 * Realtime Clock
 * IOMMU
 
+##Other useful information
+
+###Explanation of serial and virtual consoles
+* /dev/console:  
+Set of devices that can be set with console= parameter at boot time.
+Can be redirected to virt. console or serial devices, default is /dev/tty0.
+* /dev/tty0  
+Current virtual console.
+* /dev/tty[1-x]  
+One of the virtual consoles.
+* /dev/tty  
+The console used by the process querying it.
+* /dev/ttyS0  
+First UART serial port
+* /dev/pty  
+Pseudo terminal master side.
+
+How to see the boot messages from the kernel:
+The kernel has the device /dev/console. This points to the serial terminal by default.
+So qemu needs to redirect the serial output to its own tty.
+
+Sources:  
+http://unix.stackexchange.com/questions/60641/linux-difference-between-dev-console-dev-tty-and-dev-tty0
+https://www.kernel.org/doc/Documentation/devices.txt
+
+###Qemu
+Qemu is started with the -nographic option. This means qemu can be used on the command line.
+The serial ouput is also redirected to the command line. To get help for the qemu monitor,
+press [Ctrl-a, h].
+
 ##Useful Links
 
 * cross-compile-toolchain: http://gumstix.org/basic-cross-compilation.html
