@@ -10,10 +10,10 @@ ARMLinux
 
 ###Kernel
 
+* used "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- vexpress_defconfig"
+
 * initramfs source file points to "rootFSconfig"
 * enable loadable module support unchecked
-
-* used "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- vexpress_defconfig"
 
 * Device Drivers
  * Generic Driver options -> Select only drivers that don't need  compile-time external firmwarwe 
@@ -44,9 +44,9 @@ ARMLinux
 ###Compile Kernel
 
 * get latest Linux 3.4.XX Kernel (used 3.4.66)
-* extract kernel 
+* extract kernel
   * command "tar xfvj [ARCHIV].tar.bz2" for .tar.bz2 kernel
-* configure makefile for ccache 
+* configure makefile for ccache
   * CC = ccache $(CROSS_COMPILE)gcc
   * HOSTCC = ccache gcc
 * compile kernel
@@ -76,6 +76,10 @@ ARMLinux
 * use "-serial stdio" to specify stdin/out as input/output devices
 
 ##Questions
+
+Other possibilities to give compile options:
+* Set environment variable with export
+* Set variables in Makefile
 
 enabled device drivers after default config for arm:
 
