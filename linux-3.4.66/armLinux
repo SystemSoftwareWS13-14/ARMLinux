@@ -11,8 +11,12 @@ compile()
 emulate()
 {
 	IMGPATH="arch/arm/boot/zImage"
-	qemu-system-arm -kernel $IMGPATH -curses \
-	-monitor telnet:127.0.0.1:7777,server -M vexpress-a9 -serial stdio
+	qemu-system-arm -kernel $IMGPATH \
+	-M vexpress-a9 \
+	-nographic
+
+	# -nographic: Redirect output (inclusive serial) to command line
+	# -serial: Redirect serial port (standard is stdio)
 }
 
 config()
@@ -75,5 +79,4 @@ fi
 
 echo "Running $command"
 
-# Examine the command
 $command
