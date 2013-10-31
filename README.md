@@ -12,11 +12,13 @@ ARMLinux
 
 * used "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- vexpress_defconfig"
 
-* initramfs source file points to "rootFSconfig"
-* enable loadable module support unchecked
+* Manual set options
+ * initramfs source file points to "rootFSconfig"
+ * enable loadable module support unchecked
+ * remove soundcard support
 
-* Device Drivers
- * Generic Driver options -> Select only drivers that don't need  compile-time external firmwarwe 
+* Device Drivers set automatically
+ * Generic Driver options -> Select only drivers that don't need  compile-time external firmware 
  * -> prevent firmware from being built
  * -> include in-kernel firmware blobs in kernel binary
  * Memory Technology Device support
@@ -24,7 +26,6 @@ ARMLinux
  * SCSI device support -> SCSI disk support
  * Serial ATA and ...
  * Network device support -> Ethernet driver support
- * soundcard support
  * HID devices
  * USB support
  * MMC/SD/SDIO card support
