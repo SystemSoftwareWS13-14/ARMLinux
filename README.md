@@ -133,6 +133,10 @@ Sources:
 http://unix.stackexchange.com/questions/60641/linux-difference-between-dev-console-dev-tty-and-dev-tty0
 https://www.kernel.org/doc/Documentation/devices.txt
 
+To use a pty terminal -serial pty is needed as qemu parameter.
+After starting qemu, open the from qemu used pty (for example /dev/pts/25) with 
+screen /dev/pts/25 and enter system_reset in the qemu monitor. Now you can view the kernel messages in the pty.
+
 ###Qemu
 Qemu is started with the -nographic option. This means qemu can be used on the command line.
 The serial ouput is also redirected to the command line. To get help for the qemu monitor,
