@@ -11,7 +11,7 @@ compile()
 emulate()
 {
 	IMGPATH="arch/arm/boot/zImage"
-	qemu-system-arm -kernel $IMGPATH \
+	QEMU_AUDIO_DRV=none qemu-system-arm -kernel $IMGPATH \
 	-M vexpress-a9 \
 	-nographic
 
