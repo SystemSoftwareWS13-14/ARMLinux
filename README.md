@@ -10,13 +10,15 @@ ARMLinux
 
 ###Kernel
 
-* initramfs source file points to "rootFSconfig"
-* enable loadable module support unchecked
-
 * used "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- vexpress_defconfig"
 
-* Device Drivers
- * Generic Driver options -> Select only drivers that don't need  compile-time external firmwarwe 
+* Manual set options
+ * initramfs source file points to "rootFSconfig"
+ * enable loadable module support unchecked
+ * remove soundcard support
+
+* Device Drivers set automatically
+ * Generic Driver options -> Select only drivers that don't need  compile-time external firmware 
  * -> prevent firmware from being built
  * -> include in-kernel firmware blobs in kernel binary
  * Memory Technology Device support
@@ -24,7 +26,6 @@ ARMLinux
  * SCSI device support -> SCSI disk support
  * Serial ATA and ...
  * Network device support -> Ethernet driver support
- * soundcard support
  * HID devices
  * USB support
  * MMC/SD/SDIO card support
@@ -44,9 +45,9 @@ ARMLinux
 ###Compile Kernel
 
 * get latest Linux 3.4.XX Kernel (used 3.4.66)
-* extract kernel 
+* extract kernel
   * command "tar xfvj [ARCHIV].tar.bz2" for .tar.bz2 kernel
-* configure makefile for ccache 
+* configure makefile for ccache
   * CC = ccache $(CROSS_COMPILE)gcc
   * HOSTCC = ccache gcc
 * compile kernel
@@ -73,9 +74,14 @@ ARMLinux
 ###Run Emulation
 * use "arm-system-qemu" for arm systems
 * use "-M vexpress-a9" to specify Verstaile Express Board with A9 Core
-* use "-serial stdio" to specify stdin/out as input/output devices
+* QEMU_AUDIO_DRV=none to disable audio
+* -nographic: Redirect output (inclusive serial) to command line
 
 ##Questions
+
+Other possibilities to give compile options:
+* Set environment variable with export
+* Set variables in Makefile
 
 enabled device drivers after default config for arm:
 
