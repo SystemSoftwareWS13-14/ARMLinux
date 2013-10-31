@@ -96,6 +96,18 @@ enabled device drivers after default config for arm:
 * Realtime Clock
 * IOMMU
 
+It is not required to specify the kernel console= parameter.
+The kernel uses as default a serial port, and this serial port is redirected
+to the qemu stdio.
+> Kernel command line: root=/dev/nfs nfsroot=10.1.69.3:/work/nfsroot ip=dhcp console=ttyAMA0 mem=128M
+
+> Serial: AMBA PL011 UART driver
+mb:uart0: ttyAMA0 at MMIO 0x10009000 (irq = 37) is a PL011 rev1
+console [ttyAMA0] enabled
+
+The used console is ttyAMA0.
+Source: https://www.kernel.org/doc/Documentation/arm/Booting
+
 ##Other useful information
 
 ###Explanation of serial and virtual consoles
