@@ -74,7 +74,8 @@ ARMLinux
 ###Run Emulation
 * use "arm-system-qemu" for arm systems
 * use "-M vexpress-a9" to specify Verstaile Express Board with A9 Core
-* use "-serial stdio" to specify stdin/out as input/output devices
+* QEMU_AUDIO_DRV=none to disable audio
+* -nographic: Redirect output (inclusive serial) to command line
 
 ##Questions
 
