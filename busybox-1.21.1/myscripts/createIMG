@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#./populate
+./populate
 
-find ../_install/ | cpio -o -H newc --no-absolute-filenames > ../rootfs.img
-
-gzip –cf ../rootfs.img > ../rootfs.img.gz
+find ../_install/ | cpio -o -H newc --no-absolute-filenames | gzip -c > ../rootfs.img.gz
