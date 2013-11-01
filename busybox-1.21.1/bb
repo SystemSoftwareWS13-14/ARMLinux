@@ -5,7 +5,7 @@ DEFAULT_CMD=compile
 
 compile()
 {
-	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- busybox
+	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- -j 4
 }
 
 install()

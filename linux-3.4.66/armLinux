@@ -19,6 +19,21 @@ emulate()
 	# -serial: Redirect serial port (standard is stdio)
 }
 
+emulateIMG()
+{
+	
+	IMGPATH="arch/arm/boot/zImage"
+	ROOTFSPATH="../busybox-1.21.1/rootfs.img.gz"
+        QEMU_AUDIO_DRV=none qemu-system-arm -kernel $IMGPATH \
+        -M vexpress-a9 \
+        -nographic \
+	-initrd $ROOTFSPATH \
+	-append "rdinit=/sbin/init"
+
+        # -nographic: Redirect output (inclusive serial) to command line
+        # -serial: Redirect serial port (standard is stdio)
+}
+
 config()
 {
 	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
