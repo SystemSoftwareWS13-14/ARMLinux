@@ -83,6 +83,8 @@ Other possibilities to give compile options:
 * Set environment variable with export
 * Set variables in Makefile
 
+---
+
 enabled device drivers after default config for arm:
 
 * MTD 
@@ -96,6 +98,8 @@ enabled device drivers after default config for arm:
 * Realtime Clock
 * IOMMU
 
+---
+
 It is not required to specify the kernel console= parameter.
 The kernel uses as default a serial port, and this serial port is redirected
 to the qemu stdio.
@@ -105,8 +109,16 @@ to the qemu stdio.
 mb:uart0: ttyAMA0 at MMIO 0x10009000 (irq = 37) is a PL011 rev1
 console [ttyAMA0] enabled
 
+---
+
 The used console is ttyAMA0.
 Source: https://www.kernel.org/doc/Documentation/arm/Booting
+
+---
+
+To use a pty terminal -serial pty is needed as qemu parameter.
+After starting qemu, open the pty used by qemu(for example /dev/pts/25) with 
+screen /dev/pts/25 and enter system_reset in the qemu monitor. Now you can view the kernel messages in the pty.
 
 ##Other useful information
 
