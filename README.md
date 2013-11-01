@@ -132,6 +132,19 @@ Informations busybox binary (file):
 * stripped
 * size: 819kB
 
+possibilities to make busybox smaller:
+
+* link dynamically
+* remove functions
+* use smaller lib than cLibc (e.g. uLibc)
+
+---
+
+executing "busybox" -> shows possible commands
+executing "busybox ls" -> normal behaviour
+
+---
+
 ##Other useful information
 
 ###Explanation of serial and virtual consoles
