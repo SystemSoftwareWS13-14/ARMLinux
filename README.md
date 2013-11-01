@@ -120,6 +120,18 @@ To use a pty terminal -serial pty is needed as qemu parameter.
 After starting qemu, open the pty used by qemu(for example /dev/pts/25) with 
 screen /dev/pts/25 and enter system_reset in the qemu monitor. Now you can view the kernel messages in the pty.
 
+---
+
+Informations busybox binary (file):
+
+* ELF 32-bit
+* ARM-architecture
+* statically linked
+* for Linux 2.6.26
+* BuildID[sha1]=0xc693c46fe189c7ed1dad4a2be2a4865c80b612c3
+* stripped
+* size: 819kB
+
 ##Other useful information
 
 ###Explanation of serial and virtual consoles
