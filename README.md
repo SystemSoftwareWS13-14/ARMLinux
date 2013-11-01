@@ -70,12 +70,17 @@ ARMLinux
 
 * use command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- install"
  * in menuconfig BusyBox Settings –> Build Options -> Installation  Options (make install behavior) points to output dir of rootFS 
+* add other required directories (e.g. "mkdir proc sys var etc dev")
+* add initscript as "/etc/init.d/rcS"
+* use command "find [DIR] | cpio -o -H newc --no-absolute-filenames | gzip -c > rootfs.img.gz"
+ * packs [DIR] in cpio and compresses then with gzip
 
 ###Run Emulation
 * use "arm-system-qemu" for arm systems
 * use "-M vexpress-a9" to specify Verstaile Express Board with A9 Core
 * QEMU_AUDIO_DRV=none to disable audio
 * -nographic: Redirect output (inclusive serial) to command line
+* -
 
 ##Questions
 
