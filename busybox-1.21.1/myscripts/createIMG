@@ -2,4 +2,13 @@
 
 ./populate
 
-find ../_install/ | cpio -o -H newc --no-absolute-filenames | gzip -c > ../rootfs.img.gz
+ROOTFSIMG=../rootfs.img
+ROOTFSGZ=../rootfs.img.gz
+
+rm -f $ROOTFSIMG
+rm -f $ROOTFSGZ
+
+echo "Creating $ROOTFSIMG..."
+find ../_install/ | cpio -o -H newc --no-absolute-filenames > $ROOTFSIMG
+echo "Creating $ROOTFSGZ..."
+cat $ROOTFSIMG | gzip -c > $ROOTFSGZ

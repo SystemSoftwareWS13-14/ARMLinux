@@ -1,11 +1,11 @@
 #!/bin/sh
 
 echo "Mounting tmpfs..."
-mount -t tmpfs /tmp
+#mount -t tmpfs /tmp /tmp
 echo "Mounting proc..."
-mount -t proc /proc
+#mount -t proc /proc /proc
 echo "Monting sysfs..."
-mount -t sysfs /sys
+#mount -t sysfs /sys /sys
 echo "Mounting devices..."
-/sbin/mdev -s
+#/sbin/mdev -s
 echo "done"

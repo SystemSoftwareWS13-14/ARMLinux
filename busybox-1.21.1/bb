@@ -23,6 +23,12 @@ config()
 	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
 }
 
+image()
+{
+	cd myscripts
+	./createIMG
+}
+
 usage()
 {
         echo "Usage $0 [-c <command>]" 1>&2

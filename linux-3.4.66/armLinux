@@ -23,14 +23,13 @@ emulateIMG()
 {
 	
 	IMGPATH="arch/arm/boot/zImage"
-	ROOTFSPATH="../busybox-1.21.1/rootfs.img.gz"
+	ROOTFSPATH="../busybox-1.21.1/rootfs.img"
         QEMU_AUDIO_DRV=none qemu-system-arm -kernel $IMGPATH \
         -M vexpress-a9 \
         -nographic \
 	-initrd $ROOTFSPATH \
-	-append "rdinit=/sbin/init"
+	-append "root=/dev/ram rdinit=/bin/sh console=ttyAMA0"
 
-        # -nographic: Redirect output (inclusive serial) to command line
         # -serial: Redirect serial port (standard is stdio)
 }
 
