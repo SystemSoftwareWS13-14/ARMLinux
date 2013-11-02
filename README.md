@@ -40,6 +40,8 @@ ARMLinux
 * editors -> vi
 * Linux System Utilities -> mount, umount, mdev
 
+* At the moment busybox is statically linked
+
 ##How To
 
 ###Compile Kernel
@@ -80,7 +82,6 @@ ARMLinux
 * use "-M vexpress-a9" to specify Verstaile Express Board with A9 Core
 * QEMU_AUDIO_DRV=none to disable audio
 * -nographic: Redirect output (inclusive serial) to command line
-* -
 
 ##Questions
 
