@@ -29,8 +29,6 @@ emulateIMG()
         -nographic \
 	-initrd $ROOTFSPATH \
 	-append "root=/dev/ram rdinit=/bin/sh console=ttyAMA0"
-
-        # -serial: Redirect serial port (standard is stdio)
 }
 
 config()
