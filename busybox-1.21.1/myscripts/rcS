@@ -1,11 +1,3 @@
 #!/bin/sh
 
-echo "Mounting tmpfs..."
-#mount -t tmpfs /tmp /tmp
-echo "Mounting proc..."
-#mount -t proc /proc /proc
-echo "Monting sysfs..."
-#mount -t sysfs /sys /sys
-echo "Mounting devices..."
-#/sbin/mdev -s
-echo "done"
+echo "rcS start script."

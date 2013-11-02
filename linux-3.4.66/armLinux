@@ -13,10 +13,11 @@ emulate()
 	IMGPATH="arch/arm/boot/zImage"
 	QEMU_AUDIO_DRV=none qemu-system-arm -kernel $IMGPATH \
 	-M vexpress-a9 \
-	-nographic
+	-nographic -append "console=ttyAMA0"
 
 	# -nographic: Redirect output (inclusive serial) to command line
 	# -serial: Redirect serial port (standard is stdio)
+	# -append "rdinit=/bin/sh" to start shell from initramfs (not /init)
 }
 
 emulateIMG()
