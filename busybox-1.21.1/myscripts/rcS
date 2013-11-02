@@ -1,3 +1,24 @@
 #!/bin/sh
 
+echo "=============================="
 echo "rcS start script."
+echo
+
+echo "Install symlinks"
+/bin/busybox --install -s
+
+echo "Mounting tmpfs..."
+mount -t tmpfs /tmp /tmp
+
+echo "Mounting proc..."
+mount -t proc /proc /proc
+
+echo "Monting sysfs..."
+mount -t sysfs /sys /sys
+
+echo "Populate /dev"
+mdev -s
+
+echo
+echo "rcS start script done."
+echo "=============================="
