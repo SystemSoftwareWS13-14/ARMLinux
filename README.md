@@ -115,10 +115,7 @@ to the qemu stdio.
 mb:uart0: ttyAMA0 at MMIO 0x10009000 (irq = 37) is a PL011 rev1
 console [ttyAMA0] enabled
 
----
-
-The used console is ttyAMA0.
-Source: https://www.kernel.org/doc/Documentation/arm/Booting
+-> The used console is ttyAMA0. Source: https://www.kernel.org/doc/Documentation/arm/Booting
 
 ---
 
