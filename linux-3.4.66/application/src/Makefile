@@ -1,4 +1,4 @@
-CC=arm-linux-gnueabei-gcc
+CC=arm-linux-gnueabi-gcc
 CFLAGS=-static -Wall
 
 OUTFILE=$(BINDIR)/$(HWEXEC)
