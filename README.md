@@ -66,16 +66,16 @@ ARMLinux
   * CC = ccache $(CROSS_COMPILE)gcc
   * HOSTCC = ccache gcc
 * compile busybox
- * command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- busybox"
+  * command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-"
 
 ###Create rootFS with busybox
 
 * use command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- install"
- * in menuconfig BusyBox Settings –> Build Options -> Installation  Options (make install behavior) points to output dir of rootFS 
+  * in menuconfig BusyBox Settings –> Build Options -> Installation  Options (make install behavior) points to output dir of rootFS 
 * add other required directories (e.g. "mkdir proc sys var etc dev")
 * add initscript as "/etc/init.d/rcS"
 * use command "find [DIR] | cpio -o -H newc --no-absolute-filenames | gzip -c > rootfs.img.gz"
- * packs [DIR] in cpio and compresses then with gzip
+  * packs [DIR] in cpio and compresses then with gzip
 
 ###Run Emulation
 * use "arm-system-qemu" for arm systems
