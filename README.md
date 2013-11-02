@@ -40,6 +40,8 @@ ARMLinux
 * editors -> vi
 * Linux System Utilities -> mount, umount, mdev
 
+* At the moment busybox is statically linked
+
 ##How To
 
 ###Compile Kernel
@@ -64,23 +66,22 @@ ARMLinux
   * CC = ccache $(CROSS_COMPILE)gcc
   * HOSTCC = ccache gcc
 * compile busybox
- * command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- busybox"
+  * command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-"
 
 ###Create rootFS with busybox
 
 * use command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- install"
- * in menuconfig BusyBox Settings –> Build Options -> Installation  Options (make install behavior) points to output dir of rootFS 
+  * in menuconfig BusyBox Settings –> Build Options -> Installation  Options (make install behavior) points to output dir of rootFS 
 * add other required directories (e.g. "mkdir proc sys var etc dev")
 * add initscript as "/etc/init.d/rcS"
 * use command "find [DIR] | cpio -o -H newc --no-absolute-filenames | gzip -c > rootfs.img.gz"
- * packs [DIR] in cpio and compresses then with gzip
+  * packs [DIR] in cpio and compresses then with gzip
 
 ###Run Emulation
 * use "arm-system-qemu" for arm systems
 * use "-M vexpress-a9" to specify Verstaile Express Board with A9 Core
 * QEMU_AUDIO_DRV=none to disable audio
 * -nographic: Redirect output (inclusive serial) to command line
-* -
 
 ##Questions
 
@@ -114,10 +115,7 @@ to the qemu stdio.
 mb:uart0: ttyAMA0 at MMIO 0x10009000 (irq = 37) is a PL011 rev1
 console [ttyAMA0] enabled
 
----
-
-The used console is ttyAMA0.
-Source: https://www.kernel.org/doc/Documentation/arm/Booting
+-> The used console is ttyAMA0. Source: https://www.kernel.org/doc/Documentation/arm/Booting
 
 ---
 
