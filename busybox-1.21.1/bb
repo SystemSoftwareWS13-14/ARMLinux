@@ -33,8 +33,8 @@ usage()
 {
         echo "Usage $0 [-c <command>]" 1>&2
         echo -e "-c:\t\tCommand to execute:" 1>&2
-        echo -e "\t\tcompile, emulate, config, clean, defconfig" 1>&2
-        echo -e "\t\t(Default is -c emulate)" 1>&2
+        echo -e "\t\tcompile, install, noconfig, config, image" 1>&2
+        echo -e "\t\t(Default is -c compile)" 1>&2
         exit 1
 }
 
