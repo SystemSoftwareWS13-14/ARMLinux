@@ -40,6 +40,8 @@ ARMLinux
 * editors -> vi
 * Linux System Utilities -> mount, umount, mdev
 
+* Added top, free and ps
+
 * At the moment busybox is statically linked
 
 ##How To
