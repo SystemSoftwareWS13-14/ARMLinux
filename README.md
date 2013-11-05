@@ -145,8 +145,13 @@ possibilities to make busybox smaller:
 
 ---
 
-executing "busybox" -> shows possible commands
-executing "busybox ls" -> normal behaviour
+executing "busybox" -> Unable to reserve guest address space
+
+---
+
+qemu arguments:
+* -rdinit PATH
+* -append "rdinit=/sbin/init ..."
 
 ---
 
