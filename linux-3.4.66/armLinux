@@ -29,7 +29,7 @@ emulateIMG()
         -M vexpress-a9 \
         -nographic \
 	-initrd $ROOTFSPATH \
-	-append "console=ttyAMA0"
+	-append "root=/dev/ram0 console=ttyAMA0"
 }
 
 config()
