@@ -23,10 +23,35 @@ config()
 	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
 }
 
+installAll()
+{
+	compile
+	install
+	image
+}
+
+populate()
+{
+	mkdir _install/proc _install/sys _install/dev \
+	 _install/etc _install/etc/init.d _install/tmp
+
+	cp myscripts/rcS _install/etc/init.d/
+}
+
 image()
 {
-	cd myscripts
-	./createIMG
+	populate
+
+	ROOTFSIMG=rootfs.img
+	ROOTFSGZ=rootfs.img.gz
+
+	rm -f $ROOTFSIMG
+	rm -f $ROOTFSGZ
+
+	echo "Creating $ROOTFSIMG..."
+	find _install/ | cpio -o -H newc --no-absolute-filenames > $ROOTFSIMG
+	echo "Creating $ROOTFSGZ..."
+	cat $ROOTFSIMG | gzip -c > $ROOTFSGZ
 }
 
 usage()

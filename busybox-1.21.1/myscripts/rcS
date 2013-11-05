@@ -4,8 +4,8 @@ echo "=============================="
 echo "rcS start script."
 echo
 
-echo "Install symlinks"
-/bin/busybox --install -s
+#echo "Install symlinks"
+#/bin/busybox --install -s
 
 echo "Mounting tmpfs..."
 mount -t tmpfs /tmp /tmp
