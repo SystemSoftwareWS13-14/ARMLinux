@@ -24,12 +24,12 @@ emulateIMG()
 {
 	
 	IMGPATH="arch/arm/boot/zImage"
-	ROOTFSPATH="../busybox-1.21.1/rootfs.img.gz"
+	ROOTFSPATH="../busybox-1.21.1/rootfs.cpio"
         QEMU_AUDIO_DRV=none qemu-system-arm -kernel $IMGPATH \
         -M vexpress-a9 \
         -nographic \
 	-initrd $ROOTFSPATH \
-	-append "root=/dev/ram0 console=ttyAMA0"
+	-append "rdinit=/sbin/init console=ttyAMA0"
 }
 
 config()

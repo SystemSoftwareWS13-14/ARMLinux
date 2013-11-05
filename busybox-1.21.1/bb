@@ -42,15 +42,15 @@ image()
 {
 	populate
 
-	ROOTFSIMG=../rootfs.img
-	ROOTFSGZ=../rootfs.img.gz
+	ROOTFSIMG=../rootfs.cpio
+	ROOTFSGZ=../rootfs.cpio.gz
 
+	cd _install
 	rm -f $ROOTFSIMG
 	rm -f $ROOTFSGZ
 	
-	cd _install
 	echo "Creating $ROOTFSIMG..."
-	find . | cpio -o -H newc --no-absolute-filenames > $ROOTFSIMG
+	find . | cpio -o -H newc > $ROOTFSIMG
 	echo "Creating $ROOTFSGZ..."
 	cat $ROOTFSIMG | gzip -c > $ROOTFSGZ
 	cd ..
