@@ -155,6 +155,14 @@ qemu arguments:
 
 ---
 
+activated network devices:
+* ethernet driver support
+
+---
+
+supported network devices (qemu):
+* smc91c111
+
 ##Other useful information
 
 ###Explanation of serial and virtual consoles
