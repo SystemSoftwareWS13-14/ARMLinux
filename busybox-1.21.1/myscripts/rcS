@@ -19,6 +19,9 @@ mount -t sysfs /sys /sys
 echo "Mounting devtmpfs..."
 mount -t devtmpfs devtmpfs /dev
 
+echo "Requesting IP..."
+udhcpc -s /etc/simple.script
+
 #echo "Populate /dev"
 #mdev -s
 

@@ -26,6 +26,7 @@ config()
 installAll()
 {
 	compile
+	rm -r _install
 	install
 	image
 }
@@ -36,8 +37,7 @@ populate()
 	mkdir proc sys dev etc etc/init.d tmp usr/share
 
 	cp ../myscripts/rcS etc/init.d/
-	cp ../myscripts/udhcpc.conf etc
-	cp ../myscripts/simple.script usr/share
+	cp ../myscripts/simple.script etc
 	cp ../myscripts/inittab etc	
 
 	cd ..

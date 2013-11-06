@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd busybox-1.21.1
+./bb -c installAll
+cd ..
+
+cd linux-3.4.66
+./armLinux -c compile
+./armLinux -c emulateIMG
