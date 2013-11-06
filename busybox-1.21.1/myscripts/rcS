@@ -19,11 +19,21 @@ mount -t sysfs /sys /sys
 echo "Mounting devtmpfs..."
 mount -t devtmpfs devtmpfs /dev
 
+echo "******************************"
 echo "Requesting IP..."
+echo
+
 udhcpc -s /etc/simple.script
 
+echo
+echo "Set loopback interface"
+ifconfig lo 127.0.0.1
+route add -host 127.0.0.1 lo
+
+echo
 echo "Setting up HTTP-server..."
 httpd -h /www/ &
+
 
 echo
 echo "rcS start script done."

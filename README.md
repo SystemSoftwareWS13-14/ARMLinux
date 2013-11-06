@@ -163,6 +163,10 @@ activated network devices:
 supported network devices (qemu):
 * smc91c111
 
+---
+
+The loopback interface is required to ping the localhost.
+
 ##Other useful information
 
 ###Explanation of serial and virtual consoles
