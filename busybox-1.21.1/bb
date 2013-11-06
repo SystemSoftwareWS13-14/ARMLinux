@@ -44,6 +44,7 @@ populate()
 	/usr/arm-linux-gnueabi/lib/libc.so.6 \
 	lib/
 	cp ../myscripts/index.html www
+	cp ../myscripts/cgi/* www/cgi-bin
 
 	cd ..
 }
