@@ -35,7 +35,8 @@ populate()
 	mkdir _install/proc _install/sys _install/dev \
 	 _install/etc _install/etc/init.d _install/tmp
 
-	cp myscripts/rcS _install/etc/init.d/
+	cp myscripts/rcS _install/etc/init.d
+	cp myscripts/inittab _install/etc
 }
 
 image()
