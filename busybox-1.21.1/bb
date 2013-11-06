@@ -38,7 +38,8 @@ populate()
 	cp ../myscripts/rcS etc/init.d/
 	cp ../myscripts/udhcpc.conf etc
 	cp ../myscripts/simple.script usr/share
-	
+	cp ../myscripts/inittab etc	
+
 	cd ..
 }
 
