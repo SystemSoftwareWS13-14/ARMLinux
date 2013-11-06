@@ -34,11 +34,16 @@ installAll()
 populate()
 {
 	cd _install
-	mkdir proc sys dev etc etc/init.d tmp usr/share
+	mkdir proc sys dev etc etc/init.d tmp usr/share lib www www/cgi-bin
 
 	cp ../myscripts/rcS etc/init.d/
 	cp ../myscripts/simple.script etc
 	cp ../myscripts/inittab etc	
+	cp /usr/arm-linux-gnueabi/lib/libnss_{dns,files}* \
+	/usr/arm-linux-gnueabi/lib/{libresolv,ld-linux}* \
+	/usr/arm-linux-gnueabi/lib/libc.so.6 \
+	lib/
+	cp ../myscripts/index.html www
 
 	cd ..
 }

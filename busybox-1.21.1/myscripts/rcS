@@ -22,8 +22,8 @@ mount -t devtmpfs devtmpfs /dev
 echo "Requesting IP..."
 udhcpc -s /etc/simple.script
 
-#echo "Populate /dev"
-#mdev -s
+echo "Setting up HTTP-server..."
+httpd -h /www/ &
 
 echo
 echo "rcS start script done."
