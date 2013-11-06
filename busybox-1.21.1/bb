@@ -32,10 +32,14 @@ installAll()
 
 populate()
 {
-	mkdir _install/proc _install/sys _install/dev \
-	 _install/etc _install/etc/init.d _install/tmp
+	cd _install
+	mkdir proc sys dev etc etc/init.d tmp usr/share
 
-	cp myscripts/rcS _install/etc/init.d/
+	cp ../myscripts/rcS etc/init.d/
+	cp ../myscripts/udhcpc.conf etc
+	cp ../myscripts/simple.script usr/share
+	
+	cd ..
 }
 
 image()

@@ -30,7 +30,8 @@ emulateIMG()
         -nographic \
 	-initrd $ROOTFSPATH \
 	-append "rdinit=/sbin/init console=ttyAMA0" \
-	-net nic,macaddr=00:00:00:00:00:1B -net vde,sock=/tmp/vde2-tap0.ctl
+	-net nic,macaddr=00:00:00:00:00:1B,vlan=0 \
+	-net vde,sock="/tmp/vde2-tap0.ctl",vlan=0
 }
 
 config()
