@@ -30,8 +30,10 @@ echo "Set loopback interface"
 ifconfig lo 127.0.0.1
 route add -host 127.0.0.1 lo
 
-#echo "Populate /dev"
-#mdev -s
+echo
+echo "Setting up HTTP-server..."
+httpd -h /www/ &
+
 
 echo
 echo "rcS start script done."
