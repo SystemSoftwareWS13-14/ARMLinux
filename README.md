@@ -39,8 +39,7 @@ ARMLinux
 * coreutils -> ls, echo
 * editors -> vi
 * Linux System Utilities -> mount, umount, mdev
-
-* Added top, free and ps
+* System info -> top, free,  ps
 
 * At the moment busybox is statically linked
 
@@ -157,6 +156,18 @@ qemu arguments:
 
 activated network devices:
 * ethernet driver support
+  * Broadcom
+  * Chelsio
+  * Cirrus
+  * Faraday
+  * Intel
+  * Marvell
+  * Micrel
+  * National semi-conductor
+  * SEEQ
+  * SMC
+  * SMSC
+  * STMicroelectronics
 
 ---
 
