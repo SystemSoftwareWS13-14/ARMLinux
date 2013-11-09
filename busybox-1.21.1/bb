@@ -43,8 +43,11 @@ populate()
 	/usr/arm-linux-gnueabi/lib/{libresolv,ld-linux}* \
 	/usr/arm-linux-gnueabi/lib/libc.so.6 \
 	lib/
+
+	# Copy the files for http
 	cp ../myscripts/index.html www
 	cp ../myscripts/cgi/* www/cgi-bin
+	cp -r ../myscripts/jquery-ui www
 
 	cd ..
 }

@@ -1,13 +1,46 @@
-<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<HTML>
-   <HEAD>
-      <TITLE>
-         A Small Hello
-      </TITLE>
-   </HEAD>
-<BODY>
-   <H1>Hi</H1>
-   <P>This is very minimal "hello world" HTML document.</P>
-   <P> <a href="cgi-bin/OSinfo"</a>Operating System<br></P>
-</BODY>
-</HTML>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ARM Embedded Linux</title>
+	        <link href="jquery-ui/css/vader/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	        <script src="jquery-ui/js/jquery-1.9.1.js"></script>
+        	<script src="jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
+		<style>
+			body {background-color:grey;}
+			#ifconfig {
+				text-align:center;
+				color:red;
+				border:2px solid;
+				border-radius:25px;
+			}
+			#status {	
+				text-align:center;
+				color:black;
+				border:2px solid;
+				border-radius:10px;
+			}
+		</style>
+		<script>
+			$(function() {
+				$("#menu").tabs({
+					show: true,
+					heightStyle: "content"
+				});
+			});
+		</script>
+   	</head>
+	<body>
+		<div id="menu">
+			<ul>
+				<li><a href="cgi-bin/OSinfo">OS info</a></li>
+				<li><a href="#system">System info</a></li>
+				<li><a href="cgi-bin/networkConfig">Network info</a></li>
+				<li><a href="#actions">Actions</a></li>
+			</ul>
+		</div>
+		<br />
+		<div id="status">
+			<pre>Uptime:</pre>
+		</div>
+	</body>
+</html>

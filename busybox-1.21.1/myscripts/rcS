@@ -7,31 +7,30 @@ echo
 #echo "Install symlinks"
 #/bin/busybox --install -s
 
-echo "Mounting tmpfs..."
+echo "> Mounting tmpfs..."
 mount -t tmpfs /tmp /tmp
 
-echo "Mounting proc..."
+echo "> Mounting proc..."
 mount -t proc /proc /proc
 
-echo "Mounting sysfs..."
+echo "> Mounting sysfs..."
 mount -t sysfs /sys /sys
 
-echo "Mounting devtmpfs..."
+echo "> Mounting devtmpfs..."
 mount -t devtmpfs devtmpfs /dev
 
 echo "******************************"
-echo "Requesting IP..."
+echo "> Requesting IP..."
 echo
 
 udhcpc -s /etc/simple.script
 
 echo
-echo "Set loopback interface"
+echo "> Set loopback interface"
 ifconfig lo 127.0.0.1
 route add -host 127.0.0.1 lo
 
-echo
-echo "Setting up HTTP-server..."
+echo "> Setting up HTTP-server..."
 httpd -h /www/ &
 
 
