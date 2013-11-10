@@ -1,0 +1,75 @@
+#!/bin/bash
+
+DEFAULT_CMD=compile
+
+compile()
+{
+        make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- toolchain
+}
+
+compileAll()
+{
+	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- all
+}
+
+config()
+{
+	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig
+}
+
+noconfig()
+{
+	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- allnoconfig
+}
+
+defconfig()
+{
+	make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- defconfig
+}
+
+usage()
+{
+        echo "Usage $0 [-c <command>]" 1>&2
+        echo -e "-c:\t\tCommand to execute:" 1>&2
+        echo -e "\t\tcompile, emulate, config, clean, defconfig" 1>&2
+        echo -e "\t\t(Default is -c emulate)" 1>&2
+        exit 1
+}
+
+if [ $# -eq 0 ]
+then
+        command=$DEFAULT_CMD
+fi
+
+while getopts ":c:h" opt; do
+        case $opt in
+                c)
+                        command=$OPTARG
+                        ;;
+                h)
+                        usage
+                        ;;
+                :)
+                        echo "Option requires an argument."
+                        usage
+                        ;;
+                ?)
+                        echo "Invalid option."
+                        usage
+                        ;;
+                *)
+                        echo "Unimplemented option."
+                        command=$DEFAULT_CMD
+                        ;;
+        esac
+done
+shift $(($OPTIND - 1))
+
+if [ -z $command ]
+then
+        command=$DEFAULT_CMD
+fi
+
+echo "Running $command"
+
+$command
