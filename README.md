@@ -71,14 +71,11 @@ ARMLinux
   
 ###Compile uClibc
 
-* get latest stable uClibc (used 0.9.30.1)
-* extract uClibc
-  * command "tar xfvj [ARCHIV].tar.bz2" for .tar.bz2 uClibc
-* configure makefile (Rules.mak) for ccache 
-  * CC = ccache $(CROSS)gcc
-  * HOSTCC = ccache gcc
+* get latest stable Buildroot
+* extract buildroot
+  * command "tar xfvj [ARCHIV].tar.bz2" for .tar.bz2 buildroot
 * compile uClbic
-  * command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-"
+  * command "make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- toolchain"
 
 ###Create rootFS with busybox
 
