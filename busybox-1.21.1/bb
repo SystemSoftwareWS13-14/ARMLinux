@@ -34,7 +34,7 @@ installAll()
 populate()
 {
 	cd _install
-	mkdir proc sys dev etc etc/init.d tmp usr/share lib www www/cgi-bin
+	mkdir proc sys dev etc etc/init.d tmp usr/share lib www
 
 	cp ../myscripts/rcS etc/init.d/
 	cp ../myscripts/simple.script etc
@@ -46,7 +46,7 @@ populate()
 
 	# Copy the files for http
 	cp ../myscripts/index.html www
-	cp ../myscripts/cgi/* www/cgi-bin
+	cp -r ../myscripts/cgi-bin www
 	cp -r ../myscripts/jquery-ui www
 
 	cd ..
