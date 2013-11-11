@@ -39,7 +39,7 @@ ARMLinux
 * coreutils -> ls, echo
 * editors -> vi
 * Linux System Utilities -> mount, umount, mdev
-* System info -> top, free, ps, rm, uptime, cat, mv
+* System info -> top, free, ps, rm, uptime, cat, mv, halt, poweroff, reboot
 
 * At the moment busybox is statically linked
 
