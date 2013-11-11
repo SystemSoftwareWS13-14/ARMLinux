@@ -1,7 +1,0 @@
-#!/bin/sh
-
-IFCONFIG=$(ifconfig)
-
-echo "<div id="ifconfig">"
-echo "<pre>$IFCONFIG</pre>"
-echo "</div>"
